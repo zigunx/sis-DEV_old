@@ -34,20 +34,6 @@
             <div class="col-sm-4">
                 <div class="core-box">
                     <div class="heading">
-                        <i class="clip-clip circle-icon circle-teal"></i>
-                        <h2>Manajemen Pengumuman</h2>
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                    </div>
-                    <a class="view-more" href="{{route('admin.pengumuman.index')}}">
-                        View More <i class="clip-arrow-right-2"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="core-box">
-                    <div class="heading">
                         <i class="clip-database circle-icon circle-bricky"></i>
                         <h2>Manajemen Agenda lembaga</h2>
                     </div>

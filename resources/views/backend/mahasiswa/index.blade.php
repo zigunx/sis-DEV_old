@@ -39,9 +39,9 @@
                             <thead>
                                 <tr>
                                     
-                                    <th>Nama jurusan</th>
-                                    <th>jurusan</th>
-                                    <th>Tahun Ajaran</th>
+                                    <th>Nama Mahasiswa</th>
+                                    <th>Jurusan</th>
+                                    <th>Kelengkapan Data</th>
                                     <th class="hidden-xs center">Aksi Data</th>
                                     <th></th>
                                 </tr>

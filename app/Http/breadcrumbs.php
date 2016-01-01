@@ -56,18 +56,22 @@ Breadcrumbs::register('datastatisedit', function($breadcrumbs) {
     $breadcrumbs->parent('datastatis');
     $breadcrumbs->push('Edit Data', route('admin.datastatis.edit'), ['icon' => '']);
 });
-Breadcrumbs::register('datadinamis', function($breadcrumbs) {
+/*Breadcrumbs::register('datadinamis', function($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push('Data Dinamis', route('admin.dashboard.datadinamis'), ['icon' => '']);
 });
+}); 
+
+Breadcrumbs::register('indexberita', function($breadcrumbs) {
+    $breadcrumbs->parent('datadinamis');
+    $breadcrumbs->push('Index Berita', route('admin.berita.index'), ['icon' => '']);
+
+*/
 Breadcrumbs::register('lembaga', function($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push('lembaga', route('admin.dashboard.lembaga'), ['icon' => '']);
 });
-Breadcrumbs::register('indexberita', function($breadcrumbs) {
-    $breadcrumbs->parent('datadinamis');
-    $breadcrumbs->push('Index Berita', route('admin.berita.index'), ['icon' => '']);
-});
+
 Breadcrumbs::register('indexberitacreate', function($breadcrumbs) {
     $breadcrumbs->parent('indexberita');
     $breadcrumbs->push('Tambah Berita', route('admin.berita.create'), ['icon' => '']);
@@ -75,30 +79,6 @@ Breadcrumbs::register('indexberitacreate', function($breadcrumbs) {
 Breadcrumbs::register('indexberitaedit', function($breadcrumbs) {
     $breadcrumbs->parent('indexberita');
     $breadcrumbs->push('Edit Berita', route('admin.berita.edit'), ['icon' => '']);
-});
-Breadcrumbs::register('pengumuman', function($breadcrumbs) {
-    $breadcrumbs->parent('datadinamis');
-    $breadcrumbs->push('Pengumuman', route('admin.pengumuman.index'), ['icon' => '']);
-});
-Breadcrumbs::register('pengumumancreate', function($breadcrumbs) {
-    $breadcrumbs->parent('pengumuman');
-    $breadcrumbs->push('Tambah Pengumuman', route('admin.pengumuman.create'), ['icon' => '']);
-});
-Breadcrumbs::register('pengumumanedit', function($breadcrumbs) {
-    $breadcrumbs->parent('pengumuman');
-    $breadcrumbs->push('Edit Pengumuman', route('admin.pengumuman.edit'), ['icon' => '']);
-});
-Breadcrumbs::register('gurupengumuman', function($breadcrumbs) {
-    $breadcrumbs->parent('homeguru');
-    $breadcrumbs->push('Pengumuman', route('guru.pengumuman.index'), ['icon' => '']);
-});
-Breadcrumbs::register('gurupengumumancreate', function($breadcrumbs) {
-    $breadcrumbs->parent('gurupengumuman');
-    $breadcrumbs->push('Tambah Pengumuman', route('guru.pengumuman.create'), ['icon' => '']);
-});
-Breadcrumbs::register('gurupengumumanedit', function($breadcrumbs) {
-    $breadcrumbs->parent('gurupengumuman');
-    $breadcrumbs->push('Edit Pengumuman', route('guru.pengumuman.edit'), ['icon' => '']);
 });
 Breadcrumbs::register('agenda', function($breadcrumbs) {
     $breadcrumbs->parent('datadinamis');
@@ -147,30 +127,6 @@ Breadcrumbs::register('pegawaicreate', function($breadcrumbs) {
 Breadcrumbs::register('pegawaiedit', function($breadcrumbs) {
     $breadcrumbs->parent('pegawai');
     $breadcrumbs->push('Edit Pegawai', route('admin.pegawai.edit'), ['icon' => '']);
-});
-Breadcrumbs::register('polling', function($breadcrumbs) {
-    $breadcrumbs->parent('home');
-    $breadcrumbs->push('Data Polling', route('admin.polling.index'), ['icon' => '']);
-});
-Breadcrumbs::register('pollingcreate', function($breadcrumbs) {
-    $breadcrumbs->parent('polling');
-    $breadcrumbs->push('Tambah Polling', route('admin.polling.create'), ['icon' => '']);
-});
-Breadcrumbs::register('pollingedit', function($breadcrumbs) {
-    $breadcrumbs->parent('polling');
-    $breadcrumbs->push('Edit Polling', route('admin.polling.edit'), ['icon' => '']);
-});
-Breadcrumbs::register('jawaban', function($breadcrumbs, $id) {
-    $breadcrumbs->parent('polling');
-    $breadcrumbs->push('Jawaban', route('admin.polling.{id}.jawaban.index',$id), ['icon' => '']);
-});
-Breadcrumbs::register('jawabancreate', function($breadcrumbs, $id) {
-    $breadcrumbs->parent('jawaban',$id);
-    $breadcrumbs->push('Tambah Jawaban', url('admin.polling.{id}.jawaban.create', $id), ['icon' => '']);
-});
-Breadcrumbs::register('jawabanedit', function($breadcrumbs,$id) {
-    $breadcrumbs->parent('jawaban',$id);
-    $breadcrumbs->push('Edit Jawaban', route('admin.polling.{id}.jawaban.edit', $id), ['icon' => '']);
 });
 Breadcrumbs::register('galeri', function($breadcrumbs) {
     $breadcrumbs->parent('home');
