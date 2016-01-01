@@ -16,8 +16,8 @@ class mahasiswa extends Model {
         return $this->belongsTo('App\Models\jurusan', 'id_jurusan');
     }
 
-    public function absensi() {
-        return $this->hasMany('App\Models\Absensi','id_mahasiswa');
+    public function persyaratan() {
+        return $this->hasMany('App\Models\persyaratan','id_mahasiswa');
     }
 
 }

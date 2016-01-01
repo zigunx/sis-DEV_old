@@ -69,11 +69,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource('polling/{id}/jawaban', 'Admin\JawabanController');
     Route::resource('galeri', 'Admin\GaleriController');
     Route::resource('galeri/{id}/foto', 'Admin\FotoController');
-    Route::resource('absensi', 'Admin\AbsensiController');
+    Route::resource('persyaratan', 'Admin\persyaratanController');
     Route::resource('upload', 'Admin\UploadController');
     Route::post('upload/update', 'Admin\UploadController@updateFile');
-    Route::post('absensi/create', ['as' => 'admin.absensi.create', 'uses' => 'Admin\AbsensiController@create']);
-    Route::post('absensi/show', ['as' => 'admin.absensi.show', 'uses' => 'Admin\AbsensiController@show']);
+    Route::post('persyaratan/create', ['as' => 'admin.persyaratan.create', 'uses' => 'Admin\persyaratanController@create']);
+    Route::post('persyaratan/show', ['as' => 'admin.persyaratan.show', 'uses' => 'Admin\persyaratanController@show']);
 
 
 });
@@ -84,11 +84,11 @@ Route::group(['prefix' => 'guru','middleware' => 'auth'], function() {
     });
     Route::resource('pengumuman', 'Admin\PengumumanController');
     Route::resource('upload', 'Admin\UploadController');
-    Route::resource('absensi', 'Admin\AbsensiController');
+    Route::resource('persyaratan', 'Admin\persyaratanController');
     Route::get('pegawai/{id}', ['as' => 'guru.pegawai.edit', 'uses' => 'Admin\PegawaiController@edit']);
     Route::put('pegawai/{id}', ['as' => 'guru.pegawai.update', 'uses' => 'Admin\PegawaiController@update']);
-    Route::post('absensi/create', ['as' => 'guru.absensi.create', 'uses' => 'Admin\AbsensiController@create']);
-    Route::post('absensi/show', ['as' => 'guru.absensi.show', 'uses' => 'Admin\AbsensiController@show']);
+    Route::post('persyaratan/create', ['as' => 'guru.persyaratan.create', 'uses' => 'Admin\persyaratanController@create']);
+    Route::post('persyaratan/show', ['as' => 'guru.persyaratan.show', 'uses' => 'Admin\persyaratanController@show']);
 });
 
 Route::group(['prefix' => 'api'], function() {
@@ -129,12 +129,12 @@ Route::group(['prefix' => 'api'], function() {
     Route::get('galeri/{id}/foto', 'Admin\FotoController@apiFoto');
     Route::get('foto/{id}', 'Admin\FotoController@show');
 
-    Route::get('absensi', 'Admin\AbsensiController@apiAbsensi');
-    Route::get('absensi/{id}', 'Admin\AbsensiController@apiAbsensi');
+    Route::get('persyaratan', 'Admin\persyaratanController@apipersyaratan');
+    Route::get('persyaratan/{id}', 'Admin\persyaratanController@apipersyaratan');
 
     Route::get('upload', 'Admin\UploadController@apiUpload');
     Route::get('upload/{id}', 'Admin\UploadController@apiUpload');
 
     Route::get('ambilmahasiswa/{id}', 'FrontController@ambilmahasiswa');
-    Route::post('showabsensi', 'FrontController@showabsensi');
+    Route::post('showpersyaratan', 'FrontController@showpersyaratan');
 });

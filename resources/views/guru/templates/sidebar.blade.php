@@ -18,9 +18,9 @@
                 <span class="title"> Upload Berkas/File </span><span class="selected"></span>
             </a>
         </li>
-        <li class='{{setActive('absensi')}}'>
-            <a href="{{route('guru.absensi.index')}}"><i class="clip-checkbox "></i>
-                <span class="title"> Input Absensi </span><span class="selected"></span>
+        <li class='{{setActive('persyaratan')}}'>
+            <a href="{{route('guru.persyaratan.index')}}"><i class="clip-checkbox "></i>
+                <span class="title"> Input persyaratan </span><span class="selected"></span>
             </a>
         </li>
         <li class='{{setActive('pegawai')}}'>

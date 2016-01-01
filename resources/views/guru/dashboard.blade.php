@@ -45,12 +45,12 @@
         <div class="core-box">
             <div class="heading">
                 <i class="clip-users-2 circle-icon circle-bricky"></i>
-                <h2>Manajemen Absensi</h2>
+                <h2>Manajemen persyaratan</h2>
             </div>
             <div class="content">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </div>
-            <a class="view-more" href="{{route('guru.absensi.index')}}">
+            <a class="view-more" href="{{route('guru.persyaratan.index')}}">
                 View More <i class="clip-arrow-right-2"></i>
             </a>
         </div>

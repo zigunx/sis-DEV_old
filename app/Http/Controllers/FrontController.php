@@ -48,21 +48,21 @@ class FrontController extends Controller {
             case 3.4: return $this->dataguru();
             case 3.5: return $this->datapegawai();
             case 4.1: return $this->datamahasiswa();
-            case 5.1: return $this->absensi();
+            case 5.1: return $this->persyaratan();
         }
         $this->data['page'] = Models\Data::with('menu')->where('data_id', $id)->first();
         $this->data['title'] = $this->data['page'] ? $this->data['page']->menu->title : 'Page Tidak Ditekemukan';
         return view('front.post', $this->data);
     }
 
-    public function absensi() {
-        $this->data['title'] = 'Absensi';
-        return view('front.absensi', $this->data);
+    public function persyaratan() {
+        $this->data['title'] = 'persyaratan';
+        return view('front.persyaratan', $this->data);
     }
 
-    public function showabsensi(Request $request) {
+    public function showpersyaratan(Request $request) {
         $input = $request->all();
-        $mahasiswa = Models\Absensi::getAbsen($input['jurusan'],$input['bulan'],$input['tahun']);
+        $mahasiswa = Models\persyaratan::getAbsen($input['jurusan'],$input['bulan'],$input['tahun']);
         return response()->json($mahasiswa);
     }
 

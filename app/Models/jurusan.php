@@ -16,8 +16,8 @@ class jurusan extends Model {
         return $this->hasMany('App\Models\mahasiswa');
     }
 
-    public function absensi() {
-        return $this->hasMany('App\Models\Absensi');
+    public function persyaratan() {
+        return $this->hasMany('App\Models\persyaratan');
     }
 
     public function scopeDropdownjurusan($query) {

@@ -15,21 +15,21 @@ Breadcrumbs::register('gurupegawaiedit', function($breadcrumbs) {
     $breadcrumbs->parent('homeguru');
     $breadcrumbs->push('Edit Pegawai', route('guru.pegawai.edit'), ['icon' => '']);
 });
-Breadcrumbs::register('guruabsensi', function($breadcrumbs) {
+Breadcrumbs::register('gurupersyaratan', function($breadcrumbs) {
     $breadcrumbs->parent('homeguru');
-    $breadcrumbs->push('Absensi', route('guru.absensi.index'), ['icon' => '']);
+    $breadcrumbs->push('persyaratan', route('guru.persyaratan.index'), ['icon' => '']);
 });
-Breadcrumbs::register('guruabsensicreate', function($breadcrumbs) {
-    $breadcrumbs->parent('guruabsensi');
-    $breadcrumbs->push('Tambah Absensi', route('guru.absensi.create'), ['icon' => '']);
+Breadcrumbs::register('gurupersyaratancreate', function($breadcrumbs) {
+    $breadcrumbs->parent('gurupersyaratan');
+    $breadcrumbs->push('Tambah persyaratan', route('guru.persyaratan.create'), ['icon' => '']);
 });
-Breadcrumbs::register('guruabsensishow', function($breadcrumbs) {
-    $breadcrumbs->parent('guruabsensi');
-    $breadcrumbs->push('Lihat Absensi', route('guru.absensi.show'), ['icon' => '']);
+Breadcrumbs::register('gurupersyaratanshow', function($breadcrumbs) {
+    $breadcrumbs->parent('gurupersyaratan');
+    $breadcrumbs->push('Lihat persyaratan', route('guru.persyaratan.show'), ['icon' => '']);
 });
-Breadcrumbs::register('guruabsensiedit', function($breadcrumbs) {
-    $breadcrumbs->parent('guruabsensi');
-    $breadcrumbs->push('Edit Absensi', route('guru.absensi.edit'), ['icon' => '']);
+Breadcrumbs::register('gurupersyaratanedit', function($breadcrumbs) {
+    $breadcrumbs->parent('gurupersyaratan');
+    $breadcrumbs->push('Edit persyaratan', route('guru.persyaratan.edit'), ['icon' => '']);
 });
 
 Breadcrumbs::register('guruupload', function($breadcrumbs) {
@@ -196,17 +196,17 @@ Breadcrumbs::register('fotoedit', function($breadcrumbs,$id) {
     $breadcrumbs->parent('foto',$id);
     $breadcrumbs->push('Edit Foto', route('admin.galeri.{id}.foto.edit', $id), ['icon' => '']);
 });
-Breadcrumbs::register('absensi', function($breadcrumbs) {
+Breadcrumbs::register('persyaratan', function($breadcrumbs) {
     $breadcrumbs->parent('home');
-    $breadcrumbs->push('Data Absensi', route('admin.absensi.index'), ['icon' => '']);
+    $breadcrumbs->push('Data persyaratan', route('admin.persyaratan.index'), ['icon' => '']);
 });
-Breadcrumbs::register('absensicreate', function($breadcrumbs) {
-    $breadcrumbs->parent('absensi');
-    $breadcrumbs->push('Tambah Absensi', route('admin.absensi.create'), ['icon' => '']);
+Breadcrumbs::register('persyaratancreate', function($breadcrumbs) {
+    $breadcrumbs->parent('persyaratan');
+    $breadcrumbs->push('Tambah persyaratan', route('admin.persyaratan.create'), ['icon' => '']);
 });
-Breadcrumbs::register('absensishow', function($breadcrumbs) {
-    $breadcrumbs->parent('absensi');
-    $breadcrumbs->push('Lihat Absensi', route('admin.absensi.show'), ['icon' => '']);
+Breadcrumbs::register('persyaratanshow', function($breadcrumbs) {
+    $breadcrumbs->parent('persyaratan');
+    $breadcrumbs->push('Lihat persyaratan', route('admin.persyaratan.show'), ['icon' => '']);
 });
 Breadcrumbs::register('upload', function($breadcrumbs) {
     $breadcrumbs->parent('home');

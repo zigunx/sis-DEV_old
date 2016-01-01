@@ -95,6 +95,11 @@
                                 Data Kepegawaian
                             </a>
                         </li>
+                        <li class="{{setActive('admin.persyaratan')}}">
+                            <a href="{{route('admin.persyaratan.index')}}">
+                                Persyaratan
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="{{setActive('admin.polling')}}">
@@ -107,11 +112,7 @@
                         Gallery
                     </a>
                 </li>
-                <li class="{{setActive('admin.absensi')}}">
-                    <a href="{{route('admin.absensi.index')}}">
-                        Absensi
-                    </a>
-                </li>
+                
                 <li class="{{setActive('admin.upload')}}">
                     <a href="{{route('admin.upload.index')}}">
                         Upload

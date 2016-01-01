@@ -51,7 +51,7 @@ angular.module('mahasiswa').controller('jurusan', function($scope, $http, $filte
     }
 
 });
-angular.module('mahasiswa').controller('absensi', function($scope, $http, $filter, $timeout, baseURL) {
+angular.module('mahasiswa').controller('persyaratan', function($scope, $http, $filter, $timeout, baseURL) {
     $scope.data = {};
     $scope.show = false;
     $scope.telo = {};
@@ -85,7 +85,7 @@ angular.module('mahasiswa').controller('absensi', function($scope, $http, $filte
         $scope.jurusan = data;
     });
     $scope.submit = function() {
-        $http.post(baseURL.url('api/showabsensi'), $scope.data).success(function(e) {
+        $http.post(baseURL.url('api/showpersyaratan'), $scope.data).success(function(e) {
             $scope.show = true;
             $scope.telo = e;
         });
