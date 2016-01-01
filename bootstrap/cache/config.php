@@ -6,7 +6,7 @@
     'timezone' => 'Asia/Jakarta',
     'locale' => 'en',
     'fallback_locale' => 'en',
-    'key' => 'c2EECUglGZ9YjcyGubX024EjVjP0n9ep',
+    'key' => 'SomeRandomString',
     'cipher' => 'rijndael-128',
     'log' => 'daily',
     'providers' => 
@@ -117,7 +117,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\laragon\\www\\sis\\storage/framework/cache',
+        'path' => 'C:\\laragon\\www\\sis-DEV\\storage/framework/cache',
       ),
       'memcached' => 
       array (
@@ -144,11 +144,11 @@
   array (
     'files' => 
     array (
-      0 => 'C:\\laragon\\www\\sis\\app\\Providers\\AppServiceProvider.php',
-      1 => 'C:\\laragon\\www\\sis\\app\\Providers\\BusServiceProvider.php',
-      2 => 'C:\\laragon\\www\\sis\\app\\Providers\\ConfigServiceProvider.php',
-      3 => 'C:\\laragon\\www\\sis\\app\\Providers\\EventServiceProvider.php',
-      4 => 'C:\\laragon\\www\\sis\\app\\Providers\\RouteServiceProvider.php',
+      0 => 'C:\\laragon\\www\\sis-DEV\\app\\Providers\\AppServiceProvider.php',
+      1 => 'C:\\laragon\\www\\sis-DEV\\app\\Providers\\BusServiceProvider.php',
+      2 => 'C:\\laragon\\www\\sis-DEV\\app\\Providers\\ConfigServiceProvider.php',
+      3 => 'C:\\laragon\\www\\sis-DEV\\app\\Providers\\EventServiceProvider.php',
+      4 => 'C:\\laragon\\www\\sis-DEV\\app\\Providers\\RouteServiceProvider.php',
     ),
     'providers' => 
     array (
@@ -163,7 +163,7 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'C:\\laragon\\www\\sis\\storage/database.sqlite',
+        'database' => 'C:\\laragon\\www\\sis-DEV\\storage/database.sqlite',
         'prefix' => '',
       ),
       'mysql' => 
@@ -182,8 +182,8 @@
       array (
         'driver' => 'pgsql',
         'host' => 'localhost',
-        'database' => 'siap_lf_v2',
-        'username' => 'root',
+        'database' => 'forge',
+        'username' => 'forge',
         'password' => '',
         'charset' => 'utf8',
         'prefix' => '',
@@ -193,8 +193,8 @@
       array (
         'driver' => 'sqlsrv',
         'host' => 'localhost',
-        'database' => 'siap_lf_v2',
-        'username' => 'root',
+        'database' => 'forge',
+        'username' => 'forge',
         'password' => '',
         'prefix' => '',
       ),
@@ -220,7 +220,7 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\laragon\\www\\sis\\storage/app',
+        'root' => 'C:\\laragon\\www\\sis-DEV\\storage/app',
       ),
       's3' => 
       array (
@@ -343,7 +343,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\laragon\\www\\sis\\storage/framework/sessions',
+    'files' => 'C:\\laragon\\www\\sis-DEV\\storage/framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'lottery' => 
@@ -360,8 +360,8 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\laragon\\www\\sis\\resources\\views',
+      0 => 'C:\\laragon\\www\\sis-DEV\\resources\\views',
     ),
-    'compiled' => 'C:\\laragon\\www\\sis\\storage\\framework\\views',
+    'compiled' => 'C:\\laragon\\www\\sis-DEV\\storage\\framework\\views',
   ),
 );
