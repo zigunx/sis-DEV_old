@@ -1,19 +1,19 @@
 @extends('backend/templates/index')
 @section('js')
-<script src='{{asset('assets/js/controller/admin-persyaratan.js')}}'></script>
+<script src='{{asset('assets/js/controller/admin-mahasiswa.js')}}'></script>
 @stop
 @section('content')
-<div class="main-content" ng-controller="persyaratan">
+<div class="main-content" ng-controller="mahasiswa">
     <!-- end: SPANEL CONFIGURATION MODAL FORM -->
     <div class="container">
         <!-- start: PAGE HEADER -->
         <div class="row">
             <div class="col-sm-12">
-                {!! Breadcrumbs::render('jurusan'); !!}
+{!! Breadcrumbs::render('mahasiswa',$jurusan_id); !!}
                 <div class="page-header">
                     <h1>
                         {{$title}} <br />
-                        <small>persyaratan mahasiswa di website LF Wonosobo</small>
+                        <small>Menambahkan mahasiswa di situs website LF Wonosobo</small>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -29,10 +29,10 @@
                     </div>
                     <div class="panel-body">
                         <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><%alert.msg%></alert>
-                        <a class="btn btn-green add-row" href="">
+                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', $jurusan_id)}}">
                             Add New <i class="fa fa-plus"></i>
                         </a>
-                        <a class="btn btn-green add-row" href="">
+                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', $jurusan_id)}}">
                             Tambah Peryaratan <i class="fa fa-user"></i>
                         </a>
                         <div class="pull-right col-sm-5">
@@ -52,12 +52,13 @@
                             <tbody>
                                 <tr ng-repeat="status in data| filter:paginate">
                                     
-                                    <td></td>
-                                    <td></td>
-                                    <td>Lengkap</td>
+                                    <td><% status['nama_mahasiswa'] %></td>
+                                    <td><% status['jurusan']['nama_jurusan'] %></td>
+                                    <td><% status['jurusan']['tahun_ajaran'] %></td>
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href=""><i class="fa fa"><i class="fa fa-times fa fa-white"></i></a>
+                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/jurusan/'.$jurusan_id)}}/mahasiswa/<% status['id_mahasiswa']%>/edit"><i class="fa fa-edit"></i></a>
+                                            <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_mahasiswa'])"><i class="fa fa-times fa fa-white"></i></a>
                                         </div>
                                         <div class="visible-xs visible-sm hidden-md hidden-lg">
                                             <div class="btn-group">
@@ -66,12 +67,12 @@
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" role="menu">
                                                     <li role="presentation">
-                                                        <a href="" tabindex="-1" role="menuitem">
+                                                        <a href="{{url('admin/jurusan/'.$jurusan_id.'/')}}/<% status['id_data']%>edit" tabindex="-1" role="menuitem">
                                                             <i class="fa fa-edit"></i> Edit
                                                         </a>
                                                     </li>
                                                     <li role="presentation">
-                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="">
+                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="delete(status['id_mahasiswa'])">
                                                             <i class="fa fa-times"></i> Remove 
                                                         </a>
                                                     </li>
@@ -91,5 +92,5 @@
             </div>
         </div>
         <!-- end: BASIC TABLE PANEL -->
-</div>
-@stop
+    </div>
+    @stop
