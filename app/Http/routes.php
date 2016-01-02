@@ -42,16 +42,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     return view('backend.lembaga');
 }]);
     Route::resource('datastatis', 'Admin\DataStatisController');
-    Route::resource('berita', 'Admin\BeritaController');
    
-    Route::resource('agenda', 'Admin\AgendaController');
+    
     Route::resource('jurusan', 'Admin\jurusanController');
     Route::resource('jurusan/{id}/mahasiswa', 'Admin\mahasiswaController');
     Route::resource('pegawai', 'Admin\PegawaiController');
-  /*  Route::resource('polling', 'Admin\PollingController');
-    Route::resource('polling/{id}/jawaban', 'Admin\JawabanController');
-    Route::resource('galeri', 'Admin\GaleriController');
-    Route::resource('galeri/{id}/foto', 'Admin\FotoController'); */
     Route::resource('persyaratan', 'Admin\persyaratanController');
     Route::resource('upload', 'Admin\UploadController');
     Route::post('upload/update', 'Admin\UploadController@updateFile');
@@ -79,13 +74,6 @@ Route::group(['prefix' => 'api'], function() {
     Route::get('datastatis/{id}', 'Admin\DataStatisController@show');
     Route::get('menu', 'Admin\DataStatisController@apiCreateMenu');
 
-    Route::get('berita', 'Admin\BeritaController@apiBerita');
-    Route::get('berita/{id}', 'Admin\BeritaController@show');
-
- 
-    Route::get('agenda', 'Admin\AgendaController@apiAgenda');
-    Route::get('agenda/{id}', 'Admin\AgendaController@show');
-
     Route::get('jurusan', 'Admin\jurusanController@apijurusan');
     Route::get('jurusan/{id}', 'Admin\jurusanController@show');
 
@@ -95,14 +83,6 @@ Route::group(['prefix' => 'api'], function() {
 
     Route::get('pegawai', 'Admin\PegawaiController@apiPegawai');
     Route::get('pegawai/{id}', 'Admin\PegawaiController@show');
-
-
-    Route::get('galeri', 'Admin\GaleriController@apiGaleri');
-    Route::get('galeri/{id}', 'Admin\GaleriController@show');
-    Route::get('galeridropdown', 'Admin\GaleriController@apiCreateGaleri');
-
-    Route::get('galeri/{id}/foto', 'Admin\FotoController@apiFoto');
-    Route::get('foto/{id}', 'Admin\FotoController@show');
 
     Route::get('persyaratan', 'Admin\persyaratanController@apipersyaratan');
     Route::get('persyaratan/{id}', 'Admin\persyaratanController@apipersyaratan');

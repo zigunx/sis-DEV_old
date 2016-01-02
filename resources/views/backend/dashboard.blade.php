@@ -61,34 +61,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4">
-                <div class="core-box">
-                    <div class="heading">
-                        <i class="clip-list-5 circle-icon circle-green"></i>
-                        <h2>Manajemen Polling</h2>
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                    </div>
-                    <a class="view-more" href="{{route('admin.polling.index')}}">
-                        View More <i class="clip-arrow-right-2"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="core-box">
-                    <div class="heading">
-                        <i class="clip-images-2 circle-icon circle-teal"></i>
-                        <h2>Manajemen Galeri</h2>
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                    </div>
-                    <a class="view-more" href="{{route('admin.galeri.index')}}">
-                        View More <i class="clip-arrow-right-2"></i>
-                    </a>
-                </div>
-            </div>
+                        
             <div class="col-sm-4">
                 <div class="core-box">
                     <div class="heading">

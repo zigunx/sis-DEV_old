@@ -74,22 +74,7 @@
                         </li>
                     </ul>
                 </li>
-                <!--li class="{{setActive('admin.polling')}}">
-                    <a href="{{route('admin.polling.index')}}">
-                        Polling
-                    </a>
-                </li>
-                <li class="{{setActive('admin.galeri')}}">
-                    <a href="{{route('admin.galeri.index')}}">
-                        Gallery
-                    </a>
-                </li>
                 
-                <li class="{{setActive('admin.upload')}}">
-                    <a href="{{route('admin.upload.index')}}">
-                        Upload
-                    </a>
-                </li-->
             </ul>
         </div>
         <!-- end: HORIZONTAL MENU -->

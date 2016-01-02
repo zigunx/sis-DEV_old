@@ -32,9 +32,12 @@
                         <a class="btn btn-green add-row" href="{{route('admin.jurusan.create')}}">
                             Tambah jurusan <i class="fa fa-plus"></i>
                         </a>
-                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', 1)}}">
+                        <!--a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', 1)}}">
                             Tambah mahasiswa <i class="fa fa-user"></i>
                         </a>
+                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', 1)}}">
+                            Tambah Peryaratan <i class="fa fa-user"></i>
+                        </a-->
                         <div class="pull-right col-sm-5">
                             <input class="form-control col-md-12" ng-model="query"  placeholder="Search">
                         </div>

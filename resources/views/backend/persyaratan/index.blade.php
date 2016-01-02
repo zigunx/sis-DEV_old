@@ -28,76 +28,68 @@
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
-                        <div class="form-group connected-group">
-                            <form name="inputpersyaratan" action="{{route('admin.persyaratan.create')}}" method="POST">
-                                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                                <label class="control-label">
-                                    Masukan Input persyaratan<span class="symbol required"></span>
-                                </label>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <select name="tanggal" class="form-control" ng-model="data.tanggal">
-                                            <option ng-repeat="unit in date" ng-selected="unit.id == data.tanggal" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <select name="bulan" class="form-control" ng-model="data.bulan">
-                                            <option ng-repeat="unit in bulan" ng-selected="unit.id == data.bulan" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <select name="tahun" class="form-control" ng-model="data.tahun">
-                                            <option ng-repeat="unit in tahun" ng-selected="unit.id == data.tahun" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <select name="jurusan" class="form-control" ng-model="data.jurusan">
-                                            <option ng-repeat="unit in jurusan" ng-selected="unit.id == data.jurusan" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <input type="submit" class="btn btn-bricky" value="Submit">
-                                    </div>
-                            </form>
+                        <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><%alert.msg%></alert>
+                        <a class="btn btn-green add-row" href="">
+                            Add New <i class="fa fa-plus"></i>
+                        </a>
+                        <a class="btn btn-green add-row" href="">
+                            Tambah Peryaratan <i class="fa fa-user"></i>
+                        </a>
+                        <div class="pull-right col-sm-5">
+                            <input class="form-control col-md-12" ng-model="query"  placeholder="Search">
                         </div>
-                    </div>
-                    <div class="form-group connected-group">
-                         <form name="lihatpersyaratan" action="{{route('admin.persyaratan.show')}}" method="POST">
-                            <label class="control-label">
-                                Lihat persyaratan<span class="symbol required"></span>
-                            </label>
-                             <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                            <div class="row">
-                                <div class="col-md-2">
-                                        <select name="tanggal" class="form-control" ng-model="data.tanggal">
-                                            <option ng-repeat="unit in date" ng-selected="unit.id == data.tanggal" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <select name="bulan" class="form-control" ng-model="data.bulan">
-                                            <option ng-repeat="unit in bulan" ng-selected="unit.id == data.bulan" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <select name="tahun" class="form-control" ng-model="data.tahun">
-                                            <option ng-repeat="unit in tahun" ng-selected="unit.id == data.tahun" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <select name="jurusan" class="form-control" ng-model="data.jurusan">
-                                            <option ng-repeat="unit in jurusan" ng-selected="unit.id == data.jurusan" value="<%unit.id%>"><% unit.label %></option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <input type="submit" class="btn btn-bricky" value="Submit">
-                                    </div>
-                        </form>
+                        <table id="sample-table-1" class="table table-hover">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Nama Mahasiswa</th>
+                                    <th>Jurusan</th>
+                                    <th>Kelengkapan Data</th>
+                                    <th class="hidden-xs center">Aksi Data</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="status in data| filter:paginate">
+                                    
+                                    <td></td>
+                                    <td></td>
+                                    <td>Lengkap</td>
+                                    <td class="center">
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs">
+                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href=""><i class="fa fa"><i class="fa fa-times fa fa-white"></i></a>
+                                        </div>
+                                        <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                            <div class="btn-group">
+                                                <a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm">
+                                                    <i class="fa fa-cog"></i> <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu pull-right" role="menu">
+                                                    <li role="presentation">
+                                                        <a href="" tabindex="-1" role="menuitem">
+                                                            <i class="fa fa-edit"></i> Edit
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="">
+                                                            <i class="fa fa-times"></i> Remove 
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pagination total-items="totalItems" ng-model="currentPage"
+                                    max-size="10" boundary-links="true"
+                                    items-per-page="numPerPage" class="pagination-sm">
+                        </pagination>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- end: BASIC TABLE PANEL -->
+        <!-- end: BASIC TABLE PANEL -->
 </div>
 @stop
