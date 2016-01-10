@@ -1,19 +1,19 @@
 @extends('backend/templates/index')
 @section('js')
-<script src='{{asset('assets/js/controller/admin-mahasiswa.js')}}'></script>
+<script src='{{asset('assets/js/controller/admin-jurusan.js')}}'></script>
 @stop
 @section('content')
-<div class="main-content" ng-controller="mahasiswa">
+<div class="main-content" ng-controller="jurusan">
     <!-- end: SPANEL CONFIGURATION MODAL FORM -->
     <div class="container">
         <!-- start: PAGE HEADER -->
         <div class="row">
             <div class="col-sm-12">
-{!! Breadcrumbs::render('mahasiswa',$jurusan_id); !!}
+{!! Breadcrumbs::render('jurusan'); !!}
                 <div class="page-header">
                     <h1>
                         {{$title}} <br />
-                        <small>Menambahkan mahasiswa di situs website LF Wonosobo</small>
+                        <small>Menambahkan jurusan di situs website LF Wonosobo</small>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -29,36 +29,36 @@
                     </div>
                     <div class="panel-body">
                         <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><%alert.msg%></alert>
-                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', $jurusan_id)}}">
-                            Add New <i class="fa fa-plus"></i>
+                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.create')}}">
+                            Tambah jurusan <i class="fa fa-plus"></i>
                         </a>
-                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', $jurusan_id)}}">
+                        <!--a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', 1)}}">
+                            Tambah mahasiswa <i class="fa fa-user"></i>
+                        </a>
+                        <a class="btn btn-green add-row" href="{{route('admin.jurusan.{id}.mahasiswa.create', 1)}}">
                             Tambah Peryaratan <i class="fa fa-user"></i>
-                        </a>
+                        </a-->
                         <div class="pull-right col-sm-5">
                             <input class="form-control col-md-12" ng-model="query"  placeholder="Search">
                         </div>
                         <table id="sample-table-1" class="table table-hover">
                             <thead>
                                 <tr>
-                                    
-                                    <th>Nama Mahasiswa</th>
-                                    <th>Jurusan</th>
-                                    <th>Kelengkapan Data</th>
+                                    <th>Nama jurusan</th>
+                                    <th>Tahun Ajaran</th>
                                     <th class="hidden-xs center">Aksi Data</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="status in data| filter:paginate">
-                                    
-                                    <td><% status['nama_mahasiswa'] %></td>
-                                    <td><% status['jurusan']['nama_jurusan'] %></td>
-                                    <td><% status['jurusan']['tahun_ajaran'] %></td>
+                                    <td><% status['nama_jurusan'] %></td>
+                                    <td><% status['tahun_ajaran'] %></td>
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/jurusan/'.$jurusan_id)}}/mahasiswa/<% status['id_mahasiswa']%>/edit"><i class="fa fa-edit"></i></a>
-                                            <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_mahasiswa'])"><i class="fa fa-times fa fa-white"></i></a>
+                                            <a data-original-title="mahasiswa" data-placement="top" class="btn btn-xs btn-success tooltips" href="{{url('admin/jurusan')}}/<% status['id_jurusan']%>/mahasiswa"><i class="fa fa-user"></i> Lihat mahasiswa</a>
+                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/jurusan')}}/<% status['id_jurusan']%>/edit"><i class="fa fa-edit"></i></a>
+                                            <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_jurusan'])"><i class="fa fa-times fa fa-white"></i></a>
                                         </div>
                                         <div class="visible-xs visible-sm hidden-md hidden-lg">
                                             <div class="btn-group">
@@ -67,12 +67,17 @@
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" role="menu">
                                                     <li role="presentation">
-                                                        <a href="{{url('admin/jurusan/'.$jurusan_id.'/')}}/<% status['id_data']%>edit" tabindex="-1" role="menuitem">
+                                                        <a href="{{url('admin/mahasiswa')}}/<% status['id_data']%>/edit" tabindex="-1" role="menuitem">
+                                                            <i class="fa fa-user"></i> Lihat mahasiswa
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation">
+                                                        <a href="{{url('admin/jurusan')}}/<% status['id_data']%>/edit" tabindex="-1" role="menuitem">
                                                             <i class="fa fa-edit"></i> Edit
                                                         </a>
                                                     </li>
                                                     <li role="presentation">
-                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="delete(status['id_mahasiswa'])">
+                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="delete(status['id_jurusan'])">
                                                             <i class="fa fa-times"></i> Remove 
                                                         </a>
                                                     </li>

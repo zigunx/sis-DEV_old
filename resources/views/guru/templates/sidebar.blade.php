@@ -9,7 +9,7 @@
             </a>
         </li>
         <li class='{{setActive('pengumuman')}}'>
-            <a href="{{route('guru.pengumuman.index')}}"><i class="	clip-file-powerpoint "></i>
+            <a href=""><i class="	clip-file-powerpoint "></i>
                 <span class="title"> Pengumuman </span><span class="selected"></span>
             </a>
         </li>
